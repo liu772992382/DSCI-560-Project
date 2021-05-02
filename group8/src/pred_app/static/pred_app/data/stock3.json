@@ -1,0 +1,9 @@
+[
+{"name":"Apple Inc", "slug":"AAPL", "se":"NASDAQ"},
+{"name":"Amazon Com Inc", "slug":"AMZN", "se":"NASDAQ"},
+{"name":"Tesla Inc", "slug":"TSLA", "se":"NASDAQ"},
+{"name":"Google", "slug":"GOOGL", "se":"NASDAQ"},
+{"name":"Netflix Inc", "slug":"NFLX", "se":"NASDAQ"},
+{"name":"Microsoft", "slug":"MSFT", "se":"NASDAQ"}
+
+]

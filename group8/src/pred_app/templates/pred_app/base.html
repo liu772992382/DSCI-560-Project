@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);"></html>
+    <head>
+        {% load static %}
+        <title>
+            stocksprediction
+        </title>
+        <!-- get the required files from 3rd party sources -->
+        <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+            <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+            <link href="{% static 'pred_app/css/style.css' %}" rel="stylesheet" type="text/css"/>
+            <!-- Bootstrap -->
+            <link href="{% static 'pred_app/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+                <link href="{% static 'pred_app/fonts/font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+                    <link href="{% static 'pred_app/css/menusearch.css' %}" rel="stylesheet" type="text/css">
+                        <!-- Stylesheet================================================== -->
+                        <link href="{% static 'pred_app/css/style.css' %}" rel="stylesheet" type="text/css">
+                            <link href="{% static 'pred_app/css/responsive.css' %}" rel="stylesheet" type="text/css">
+                                <script src="{% static 'pred_app/js/modernizr.custom.js' %}" type="text/javascript">
+                                </script>
+                                <link href="http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300" rel="stylesheet" type="text/css">
+                                    <link href="http://fonts.googleapis.com/css?family=Playball" rel="stylesheet" type="text/css">
+                                        <script src="{% static 'pred_app/js/jquery.1.11.1.js' %}" type="text/javascript">
+                                        </script>
+                                        <script src="{% static 'pred_app/js/jquery-1.10.2.min.js' %}" type="text/javascript">
+                                        </script>
+                                        <script src="{% static 'pred_app/js/handlebars.js' %}">
+                                        </script>
+                                        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript">
+                                        </script>
+                                    </link>
+                                </link>
+                            </link>
+                        </link>
+                    </link>
+                </link>
+            </link>
+        </link>
+    </head>
+    <body>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+        </script>
+        <script src="{% static 'pred_app/js/jquery.1.11.1.js'%}" type="text/javascript">
+        </script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{% static 'pred_app/js/bootstrap.js'%}" type="text/javascript">
+        </script>
+        <!-- Javascripts
+    ================================================== -->
+        <script src="{% static 'pred_app/js/typeahead.js'%}">
+        </script>
+        <script src="{% static 'pred_app/js/search.js'%}">
+        </script>
+        <div class="header" style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+            <div class="logo" style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+                <h1>
+                    <a href="index" onmouseover="mouseOver()" onmouseout="mouseOut()" >
+                        <span id="preds_logo">
+                            stocks
+                        </span>
+                        <span id="stocks_logo">
+                        prediction
+                        </span>
+                        <br>
+                        </br>
+                    </a>
+                </h1>
+            </div>
+            <div class="menu_nav" style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); ">
+                <ul>
+                    {% block nav %}{% endblock %}
+                </ul>
+            </div>
+            <div class="clr">
+            </div>
+            <div class="clr">
+            </div>
+        </div>
+        {% block content %}{% endblock %}
+        <div class="clr">
+        </div>
+        <div class="fbg">
+            <div class="fbg_resize">
+
+                <div class="col c3" style="width:620px">
+                    <h2>
+                        <span>
+                            User Manual
+                        </span>
+                    </h2>
+                    1. Home page is showing the stock market <br>
+                    2. Click the second button of the menu to see our prediction <br>
+                    3. <a href="Mailto:lyup@usc.edu;tingmou@usc.edu;xliu9675@usc.edu?
+                        Subject=stock_prediciton_content&Body=message">If you have any questions, you are welcome to contact us.</a><br>
+                </div>
+                <br>
+                
+                <div class="col c3" style="width:620px">
+                    <h2>
+                        <span>
+                            About us.
+                        </span>
+                    </h2>
+                    A Course Project of DSCI560.<br>
+                    The stock market prediction system is a hybrid ML Model: <br>
+                    Tweets sentiment analysis (NLP) + LSTM with Attention Network
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<div class="clr">
+</div>
+<!-- <div class="footer">
+    <div class="footer_resize">
+
+    </div>
+</div> -->
+<script type="text/javascript">
+    function mouseOver() {
+  document.getElementById("stocks_logo").style.color = "#C0C0C0";
+  document.getElementById("preds_logo").style.color = "#C0C0C0";
+}
+function mouseOut() {
+  document.getElementById("stocks_logo").style.color = "#ffffff";
+  document.getElementById("preds_logo").style.color = "#ffffff";
+}
+</script>

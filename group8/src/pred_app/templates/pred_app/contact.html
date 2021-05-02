@@ -1,0 +1,78 @@
+{% extends "pred_app/base.html" %}
+{% load static %}
+{% block nav %}
+<!--this page has been cancelled -->
+<li>
+    <a href="index">
+        Home
+    </a>
+</li>
+<li>
+    <a href="pred">
+        Prediction
+    </a>
+</li>
+
+{% endblock nav %}
+{% block content %}
+<div class="content"  style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+    <div class="article">
+        <h2>
+            <!-- <span style="color:#ffffff" >
+                You are welcome to contact us. <br>
+                You
+            </span> -->
+        </h2>
+        
+    </div>
+    <div class="article">
+        <!-- <h1>
+            <span style="color:#ffffff";>
+                Your Information
+            </span>
+        </h1> -->
+        <div style="width:100%;text-align:center">
+        <form action="#" id="sendemail" method="post" >
+            <ol>
+                <a href="Mailto:lyup@usc.edu?
+                        Subject=stock_prediciton_content&Body=message">You are welcome to contact us.</a>
+                <!-- <li>
+                    <div style="width:41%;text-align:right">
+                    <label for="name" style="color:#ffffff" >
+                        Name (required)
+                    </label></div>
+                    <input class="text" id="name" name="name"/>
+                </li>
+                <li>
+                    <div style="width:44%;text-align:right">
+                    <label for="email" style="color:#ffffff";>
+                        Email Address (required)
+                    </label></div>
+                    <input class="text" id="email" name="email"/>
+                </li>
+                <li>
+                    <div style="width:40.5%;text-align:right">
+                    <label for="message" style="color:#ffffff";>
+                        Your Message
+                    </label></div>
+                    <textarea style="color: black;" cols="50" id="message" name="message" rows="8">
+                    </textarea>
+                </li>
+                <a href="Mailto:lyup@usc.edu?CC=lyup@usc.edu&Subject=stock_prediciton_content&Body=">SEND</a>
+                <a href="Mailto:lyup@usc.edu?CC=email
+                            &Subject=stock_prediciton_content&Body=message">SEND</a>
+                
+                 <form name='sendmail' action='mailto:lyup@usc.edu'>
+                    <input name='name' type='text'>
+                    <input name='subject' type='text' >
+                    <input name='email' type='text' >
+                    <input name='number' type='text' >
+                    <input name='body' type='text' >
+                </form> -->
+            
+                        </ol>
+        </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

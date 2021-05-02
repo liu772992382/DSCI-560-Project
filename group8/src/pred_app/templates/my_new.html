@@ -1,0 +1,750 @@
+<!--
+=========================================================
+Material Dashboard - v2.1.2
+=========================================================
+
+Product Page: https://www.creative-tim.com/product/material-dashboard
+Copyright 2020 Creative Tim (https://www.creative-tim.com)
+Coded by Creative Tim
+
+=========================================================
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../static/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Material Dashboard by Creative Tim
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" /> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="../static/assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../static/assets/demo/demo.css" rel="stylesheet" />
+
+  <!-- <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"> -->
+</head>
+
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/dark.js"></script>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../static/assets/img/sidebar-1.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          Creative Tim
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="./dashboard.html">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./user.html">
+              <i class="material-icons">person</i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./tables.html">
+              <i class="material-icons">content_paste</i>
+              <p>Table List</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./typography.html">
+              <i class="material-icons">library_books</i>
+              <p>Typography</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./icons.html">
+              <i class="material-icons">bubble_chart</i>
+              <p>Icons</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./map.html">
+              <i class="material-icons">location_ons</i>
+              <p>Maps</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./notifications.html">
+              <i class="material-icons">notifications</i>
+              <p>Notifications</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./rtl.html">
+              <i class="material-icons">language</i>
+              <p>RTL Support</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:;">Dashboard</a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            <form class="navbar-form">
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                  <i class="material-icons">search</i>
+                  <div class="ripple-container"></div>
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav">
+              <li>
+                <div style="float: left; margin-left: 15px;">
+                  From: <input type="text" id="fromfield" class="amcharts-input" />
+                  To: <input type="text" id="tofield" class="amcharts-input" />
+                  </div>
+                  <div style="float: right; margin-right: 15px;">
+                
+                  <button id="b1m" class="amcharts-input btn btn-primary">1m</button>
+                  <button id="b3m" class="amcharts-input btn btn-primary">3m</button>
+                  <button id="b6m" class="amcharts-input btn btn-primary">6m</button>
+                  <button id="b1y" class="amcharts-input btn btn-primary">1y</button>
+                  <button id="bytd" class="amcharts-input btn btn-primary">YTD</button>
+                  <button id="bmax" class="amcharts-input btn btn-primary">MAX</button>
+              </li>
+            </ul>
+
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card card-chart">
+                <div class="card-header card-header-success">
+                  <div class="ct-chart" id="dailySalesChart"></div>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Daily Sales</h4>
+                  <p class="card-category">
+                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">access_time</i> updated 4 minutes ago
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <!-- <div id="chartdiv"></div> -->
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+            <div id="chartdiv"></div>
+        </div>
+      </div>
+      <!-- <footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="https://www.creative-tim.com">
+                  Creative Tim
+                </a>
+              </li>
+              <li>
+                <a href="https://creative-tim.com/presentation">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="http://blog.creative-tim.com">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="https://www.creative-tim.com/license">
+                  Licenses
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>, made with <i class="material-icons">favorite</i> by
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+          </div>
+        </div>
+      </footer> -->
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../static/assets/js/core/jquery.min.js"></script>
+  <script src="../static/assets/js/core/popper.min.js"></script>
+  <script src="../static/assets/js/core/bootstrap-material-design.min.js"></script>
+  <script src="../static/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- Plugin for the momentJs  -->
+  <script src="../static/assets/js/plugins/moment.min.js"></script>
+  <!--  Plugin for Sweet Alert -->
+  <script src="../static/assets/js/plugins/sweetalert2.js"></script>
+  <!-- Forms Validations Plugin -->
+  <script src="../static/assets/js/plugins/jquery.validate.min.js"></script>
+  <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+  <script src="../static/assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+  <script src="../static/assets/js/plugins/bootstrap-selectpicker.js"></script>
+  <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+  <script src="../static/assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+  <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+  <script src="../static/assets/js/plugins/jquery.dataTables.min.js"></script>
+  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+  <script src="../static/assets/js/plugins/bootstrap-tagsinput.js"></script>
+  <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+  <script src="../static/assets/js/plugins/jasny-bootstrap.min.js"></script>
+  <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+  <script src="../static/assets/js/plugins/fullcalendar.min.js"></script>
+  <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+  <script src="../static/assets/js/plugins/jquery-jvectormap.js"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="../static/assets/js/plugins/nouislider.min.js"></script>
+  <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+  <!-- Library for adding dinamically elements -->
+  <script src="../static/assets/js/plugins/arrive.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
+  <!-- Chartist JS -->
+  <!-- <script src="../static/assets/js/plugins/chartist.min.js"></script> -->
+  <!--  Notifications Plugin    -->
+  <script src="../static/assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../static/assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../static/assets/demo/demo.js"></script>
+  <script>
+    $(document).ready(function() {
+      $().ready(function() {
+        $sidebar = $('.sidebar');
+
+        $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+
+        window_width = $(window).width();
+
+        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+        if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+          if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+            $('.fixed-plugin .dropdown').addClass('open');
+          }
+
+        }
+
+
+        $('.fixed-plugin .active-color span').click(function() {
+          $full_page_background = $('.full-page-background');
+
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data-color', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data-color', new_color);
+          }
+        });
+
+        $('.fixed-plugin .background-color .badge').click(function() {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('background-color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data-background-color', new_color);
+          }
+        });
+
+        $('.fixed-plugin .img-holder').click(function() {
+          $full_page_background = $('.full-page-background');
+
+          $(this).parent('li').siblings().removeClass('active');
+          $(this).parent('li').addClass('active');
+
+
+          var new_image = $(this).find("img").attr('src');
+
+          if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+            $sidebar_img_container.fadeOut('fast', function() {
+              $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+              $sidebar_img_container.fadeIn('fast');
+            });
+          }
+
+          if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+            $full_page_background.fadeOut('fast', function() {
+              $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+              $full_page_background.fadeIn('fast');
+            });
+          }
+
+          if ($('.switch-sidebar-image input:checked').length == 0) {
+            var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+          }
+        });
+
+        $('.switch-sidebar-image input').change(function() {
+          $full_page_background = $('.full-page-background');
+
+          $input = $(this);
+
+          if ($input.is(':checked')) {
+            if ($sidebar_img_container.length != 0) {
+              $sidebar_img_container.fadeIn('fast');
+              $sidebar.attr('data-image', '#');
+            }
+
+            if ($full_page_background.length != 0) {
+              $full_page_background.fadeIn('fast');
+              $full_page.attr('data-image', '#');
+            }
+
+            background_image = true;
+          } else {
+            if ($sidebar_img_container.length != 0) {
+              $sidebar.removeAttr('data-image');
+              $sidebar_img_container.fadeOut('fast');
+            }
+
+            if ($full_page_background.length != 0) {
+              $full_page.removeAttr('data-image', '#');
+              $full_page_background.fadeOut('fast');
+            }
+
+            background_image = false;
+          }
+        });
+
+        $('.switch-sidebar-mini input').change(function() {
+          $body = $('body');
+
+          $input = $(this);
+
+          if (md.misc.sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            md.misc.sidebar_mini_active = false;
+
+            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+          } else {
+
+            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+            setTimeout(function() {
+              $('body').addClass('sidebar-mini');
+
+              md.misc.sidebar_mini_active = true;
+            }, 300);
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function() {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function() {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+
+        });
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      md.initDashboardPageCharts();
+
+    });
+  </script>
+
+
+<!-- table script -->
+<script>
+  am4core.ready(function() {
+  
+  // Themes begin
+  // am4core.useTheme(am4themes_material);
+  am4core.useTheme(am4themes_animated);
+  // Themes end
+  
+  // Create chart
+  var chart = am4core.create("chartdiv", am4charts.XYChart);
+  chart.padding(0, 15, 0, 15);
+  
+  // Load external data
+  var host_name = 'http://127.0.0.1:8001';
+  params = {'stock_symbol': 'amzn'};
+
+  $.ajaxSetup({  
+    async : false  
+});
+
+ $.get(host_name + '/new_data', params, function (data) {
+    // console.log(data[0]);
+    console.log('data', data);
+    // var res = JSON.parse(data);
+    // console.log('res', res);
+  });
+
+    var stock_symbol = 'amzn'
+    chart.dataSource.url = host_name + '/new_data?stock_symbol=' + stock_symbol;
+    chart.dataSource.parser = new am4core.JSONParser();
+
+    chart.data = chart.dataSource.data;
+
+    console.log(chart.dataSource);
+    console.log('test:', chart.data);
+
+//   var jsonObject = JSON.parse('{{ predicted_result_df | escapejs}}');
+//   chart.data = jsonObject
+  
+  // the following line makes value axes to be arranged vertically.
+  chart.leftAxesContainer.layout = "vertical";
+  
+  // uncomment this line if you want to change order of axes
+  //chart.bottomAxesContainer.reverseOrder = true;
+  
+  var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+  dateAxis.renderer.grid.template.location = 0;
+  dateAxis.renderer.ticks.template.length = 8;
+  dateAxis.renderer.ticks.template.strokeOpacity = 0.1;
+  dateAxis.renderer.grid.template.disabled = true;
+  dateAxis.renderer.ticks.template.disabled = false;
+  dateAxis.renderer.ticks.template.strokeOpacity = 0.2;
+  dateAxis.renderer.minLabelPosition = 0.01;
+  dateAxis.renderer.maxLabelPosition = 0.99;
+  dateAxis.keepSelection = true;
+  dateAxis.minHeight = 30;
+  
+  dateAxis.groupData = true;
+  dateAxis.minZoomCount = 5;
+  
+  // these two lines makes the axis to be initially zoomed-in
+  // dateAxis.start = 0.7;
+  // dateAxis.keepSelection = true;
+  
+  var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+  valueAxis.tooltip.disabled = true;
+  valueAxis.zIndex = 1;
+  valueAxis.renderer.baseGrid.disabled = true;
+  // height of axis
+  valueAxis.height = am4core.percent(65);
+  
+  valueAxis.renderer.gridContainer.background.fill = am4core.color("#000000");
+  valueAxis.renderer.gridContainer.background.fillOpacity = 0.05;
+  valueAxis.renderer.inside = true;
+  valueAxis.renderer.labels.template.verticalCenter = "bottom";
+  valueAxis.renderer.labels.template.padding(2, 2, 2, 2);
+  
+  //valueAxis.renderer.maxLabelPosition = 0.95;
+  valueAxis.renderer.fontSize = "0.8em"
+  
+  var series = chart.series.push(new am4charts.LineSeries());
+  series.dataFields.dateX = "Date";
+  series.dataFields.valueY = "Close";
+  series.tooltipText = "Prediction Close: $ {valueY.value}";
+  series.to
+  series.name = "Prediction Value";
+  series.defaultState.transitionDuration = 0;
+  // series.stroke = am4core.color("#f44b3e");
+  
+  var series2 = chart.series.push(new am4charts.LineSeries());
+  series2.dataFields.dateX = "Date";
+  series2.dataFields.valueY = "Close2";
+  series2.tooltipText = "Real Close: $ {valueY.value}";
+  series2.name = "Real Value";
+  series2.defaultState.transitionDuration = 0;
+  // series2.stroke = am4core.color("#4BC0C0");
+  
+  var valueAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
+  valueAxis2.tooltip.disabled = true;
+  // height of axis
+  valueAxis2.height = am4core.percent(35);
+  valueAxis2.zIndex = 3
+  // this makes gap between panels
+  valueAxis2.marginTop = 30;
+  valueAxis2.renderer.baseGrid.disabled = true;
+  valueAxis2.renderer.inside = true;
+  valueAxis2.renderer.labels.template.verticalCenter = "bottom";
+  valueAxis2.renderer.labels.template.padding(2, 2, 2, 2);
+  //valueAxis.renderer.maxLabelPosition = 0.95;
+  valueAxis2.renderer.fontSize = "0.8em"
+  
+  valueAxis2.renderer.gridContainer.background.fill = am4core.color("#000000");
+  valueAxis2.renderer.gridContainer.background.fillOpacity = 0.05;
+  
+  var series3 = chart.series.push(new am4charts.ColumnSeries());
+    series3.dataFields.dateX = "Date";
+    series3.dataFields.valueY = "Volume";
+    series3.yAxis = valueAxis2;
+    series3.tooltipText = "{valueY.value}";
+    series3.name = "Volume";
+    // volume should be summed
+    series3.groupFields.valueY = "sum";
+    series3.defaultState.transitionDuration = 0;
+    series2.stroke = am4core.color("#4BC0C0");
+  
+  
+  
+  chart.cursor = new am4charts.XYCursor();
+  
+  var scrollbarX = new am4charts.XYChartScrollbar();
+  scrollbarX.series.push(series);
+  scrollbarX.marginBottom = 20;
+  scrollbarX.scrollbarChart.xAxes.getIndex(0).minHeight = undefined;
+  chart.scrollbarX = scrollbarX;
+  
+  
+  /**
+   * Set up external controls
+   */
+  
+  // Date format to be used in input fields
+  var inputFieldFormat = "yyyy-MM-dd";
+  
+  chart.legend = new am4charts.Legend();
+  
+  
+  document.getElementById("b1m").addEventListener("click", function() {
+    resetButtonClass();
+    var max = dateAxis.groupMax["day1"];
+    var date = new Date(max);
+    date.setMonth(date.getMonth() - 1);
+  
+    dateAxis.zoomToDates(
+      date,
+      new Date(max)
+    );
+    //this.className = "amcharts-input amcharts-input-selected";
+  });
+  
+  document.getElementById("b3m").addEventListener("click", function() {
+    resetButtonClass();
+    var max = dateAxis.groupMax["day1"];
+    var date = new Date(max);
+    date.setMonth(date.getMonth() - 3);
+  
+    dateAxis.zoomToDates(
+      date,
+      new Date(max)
+    );
+    //this.className = "amcharts-input amcharts-input-selected";
+  });
+  
+  document.getElementById("b6m").addEventListener("click", function() {
+    resetButtonClass();
+    var max = dateAxis.groupMax["day1"];
+    var date = new Date(max);
+    date.setMonth(date.getMonth() - 6);
+  
+    dateAxis.zoomToDates(
+      date,
+      new Date(max)
+    );
+    //this.className = "amcharts-input amcharts-input-selected";
+  });
+  
+  document.getElementById("b1y").addEventListener("click", function() {
+    resetButtonClass();
+    var max = dateAxis.groupMax["week1"];
+    var date = new Date(max);
+    date.setFullYear(date.getFullYear() - 1);
+  
+    dateAxis.zoomToDates(
+      date,
+      new Date(max)
+    );
+    //this.className = "amcharts-input amcharts-input-selected";
+  });
+  
+  document.getElementById("bytd").addEventListener("click", function() {
+    resetButtonClass();
+    var date = new Date(dateAxis.max);
+    date.setMonth(0, 1);
+    date.setHours(0, 0, 0, 0);
+    dateAxis.zoomToDates(date, new Date(dateAxis.max));
+    //this.className = "amcharts-input amcharts-input-selected";
+  });
+  
+  document.getElementById("bmax").addEventListener("click", function() {
+    resetButtonClass();
+    dateAxis.zoom({start:0, end:1});
+    //this.className = "amcharts-input amcharts-input-selected";
+  });
+  
+  function resetButtonClass() {
+    var selected = document.getElementsByClassName("amcharts-input-selected");
+    for(var i = 0; i < selected.length; i++) {
+      selected[i].className = "amcharts-input";
+    }
+  }
+  
+  dateAxis.events.on("selectionextremeschanged", function() {
+    updateFields();
+  });
+  
+  dateAxis.events.on("extremeschanged", updateFields);
+  
+  function updateFields() {
+    var minZoomed = dateAxis.minZoomed + am4core.time.getDuration(dateAxis.mainBaseInterval.timeUnit, dateAxis.mainBaseInterval.count) * 0.5;
+    document.getElementById("fromfield").value = chart.dateFormatter.format(minZoomed, inputFieldFormat);
+    document.getElementById("tofield").value = chart.dateFormatter.format(new Date(dateAxis.maxZoomed), inputFieldFormat);
+  }
+  
+  document.getElementById("fromfield").addEventListener("keyup", updateZoom);
+  document.getElementById("tofield").addEventListener("keyup", updateZoom);
+  
+  var zoomTimeout;
+  function updateZoom() {
+    if (zoomTimeout) {
+      clearTimeout(zoomTimeout);
+    }
+    zoomTimeout = setTimeout(function() {
+      resetButtonClass();
+      var start = document.getElementById("fromfield").value;
+      var end = document.getElementById("tofield").value;
+      if ((start.length < inputFieldFormat.length) || (end.length < inputFieldFormat.length)) {
+        return;
+      }
+      var startDate = chart.dateFormatter.parse(start, inputFieldFormat);
+      var endDate = chart.dateFormatter.parse(end, inputFieldFormat);
+  
+      if (startDate && endDate) {
+        dateAxis.zoomToDates(startDate, endDate);
+      }
+    }, 500);
+  }
+  
+  }); // end am4core.ready()
+  </script>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+<div class="d-flex flex-column p-3 text-white bg-dark" style="width: 280px;">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+    <span class="fs-4">Sidebar</span>
+  </a>
+  <hr>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a href="#" class="nav-link active">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+        Orders
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+        Products
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+        Customers
+      </a>
+    </li>
+  </ul>
+  <hr>
+  <div class="dropdown">
+    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+      <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle me-2">
+      <strong>mdo</strong>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+      <li><a class="dropdown-item" href="#">New project...</a></li>
+      <li><a class="dropdown-item" href="#">Settings</a></li>
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Sign out</a></li>
+    </ul>
+  </div>
+</div>
